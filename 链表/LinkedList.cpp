@@ -67,6 +67,27 @@ namespace LinkedListNS
             size++;
         }
 
+        void addAtTail(ListNode* node)
+        {
+            if (head == NULL)
+            {
+                head = node;
+                dummyHead->next = head;
+            }
+            else
+            {
+                ListNode *current = head;
+                while (current->next != NULL)
+                {
+                    current = current->next;
+                }
+
+                current->next = node;
+            }
+
+            size++;
+        }
+
         void addAtHead(int value)
         {
             if (head == NULL)
